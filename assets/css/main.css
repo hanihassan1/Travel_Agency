@@ -1,0 +1,13 @@
+.navbar {
+    padding-bottom:50px;
+}
+
+.header-info {
+    display:inline-block;
+    flex-wrap: nowrap; 
+    background-color: #c20d00;
+    color: white;
+}
+.anch-nav {
+   color:white;
+}

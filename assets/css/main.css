@@ -3,6 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300:100,200,300,400,500,600,700|EXO:100,200,300,400,500,600,700');
 
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC:100,200,300,400,500,600,700|EXO:100,200,300,400,500,600,700');
 
 body {
   text-align: center;
@@ -14,6 +15,7 @@ body {
 
 .headerLog_color {
       background-color:white;
+     
     
     
 }
@@ -222,4 +224,76 @@ h2::after {
 .carousel-indicators li.active {	
 	background: #555;		
 	box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
+}
+
+.about-p  {
+    	font-family: "Roboto", sans-serif;
+    	text-align:justify;
+}
+
+.about-title  {
+    font-family: 'Playfair Display SC', serif;
+    text-align:center;
+    padding-bottom: 18px;
+}
+
+.about-me-div {
+    padding-top:20px;
+    line-height: 2.5;
+    font-size:20px;
+}
+
+.testimony-div {
+    padding-top:100px;
+}
+
+
+
+.map-div  {
+    padding-bottom:20px;
+}
+.mapouter{
+    position:relative;
+    text-align:right;
+    height:400px;
+    width:500px;
+    
+}
+.gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+    height:400px;
+    width:500px;
+    
+}
+/*---------------------------------------------------------Hotels*/
+.font-weight-bold {
+    font-weight: 700;
+}
+.checkInOut-edit  {
+     font-weight: 700;
+}
+
+ 
+.form-control-inOut {
+    width:150px;
+}
+
+.form-control-AdultChild  {
+    width:75px;
+}
+
+
+.hotel-title  {
+     font-family: 'Playfair Display SC', serif;
+    text-align:center;
+    padding-bottom: 18px;
+}
+
+.hotel-div  {
+    padding-top:100px;
+}
+.hotel-div-border {
+    border:3px solid green;
+    
 }

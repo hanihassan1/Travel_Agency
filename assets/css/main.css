@@ -116,6 +116,7 @@ body {
 /*--------------------------------------------home body*/
 
 
+
 .carousel-inner {
     padding-top:27px;
     
@@ -125,10 +126,11 @@ body {
     
 .searchBarMain{
     z-index:2;
-    position:absolute;
-    top: 420px;
-    left: 400px;
-    opacity: .7;
+     opacity: .7;
+     position: fixed;
+    text-align:right;
+    left:1000px;
+      overflow: hidden;
 }
 
 
@@ -267,22 +269,6 @@ h2::after {
     
 }
 /*---------------------------------------------------------Hotels*/
-.font-weight-bold {
-    font-weight: 700;
-}
-.checkInOut-edit  {
-     font-weight: 700;
-}
-
- 
-.form-control-inOut {
-    width:150px;
-}
-
-.form-control-AdultChild  {
-    width:75px;
-}
-
 
 .hotel-title  {
      font-family: 'Playfair Display SC', serif;
@@ -293,7 +279,13 @@ h2::after {
 .hotel-div  {
     padding-top:100px;
 }
-.hotel-div-border {
-    border:3px solid green;
-    
+
+
+.hotelName-title {
+ 
 }
+
+.checked {
+  color: orange;
+}
+

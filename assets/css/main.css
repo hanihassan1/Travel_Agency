@@ -14,64 +14,176 @@ body {
 
 /*--------------------------------------------header/nav*/
 
-.headerLog_color {
-      background-color:white;
-     
-    
-    
-}
-.hotel-nav {
- border-left:1px solid black;
- text-align:center;
- font-size:20px;
-}
-.car-nav {
-     border-left:1px solid black;
-     text-align:center;
-     font-size:20px;
+ html {
+  box-sizing: border-box;
 }
 
-.home-nav {
-     /*border-left:1px solid black;*/
-     text-align:center;
-     font-size:20px;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
 }
 
-.deals-nav  {
-     border-left:1px solid black;
-     text-align:center;
-     font-size:20px;
+/*body {*/
+/*  background: #1a1a1a;*/
+/*}*/
+
+nav {
+  background: #212121;
+  height: 70px;
+  z-index: 1;
 }
 
-.list-inline{
-       -webkit-margin-bottom-collapse: discard;
+nav #brand {
+  float: left;
+  display: block;
+  margin-left: 20px;
+  font-size: 50px;
+  line-height: 70px;
+  font-weight: bold;
 }
-.header-info {
-    display:inline-block;
-    flex-wrap: nowrap; 
-    background-color: white;
-    color: black;
-    border-top:1px solid black;
-    border-bottom:1px solid black;
+
+#brand {
+    color:white;
+}
+
+nav #brand a {
+  color: #fff;
+  transition: all 0.3s ease-out;
+}
+
+nav #brand a:hover {
+  color: #777777;
+}
+
+nav #menu {
+  float: left;
+  left: 15%;
+  position: relative;
+}
+
+nav #menu li {
+  display: inline-block;
+  padding: 0px 50px;
+  cursor: pointer;
+  line-height: 70px;
+  position: relative;
+  transition: all 0.3s ease-out;
+}
+
+nav #menu li a {
+  color: #fff;
+}
+
+nav #menu li:hover {
+  background: #333;
+}
+
+#toggle {
+  position: fixed;
+  right: 20px;
+  top: 14px;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  float: right;
+  transition: all 0.3s ease-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#toggle .span {
+  height: 7px;
+  background: #333;
+  margin: 5px auto;
+  backface-visibility: hidden;
+}
+.span {
+    visibility: hidden !important;
     
-    font-family: 'Roboto', sans-serif;
-}
-.anch-nav {
-   color:black;
 }
 
-.brand-header {
-     font-family: 'Roboto', sans-serif;
-    color:black;
-    text-transform:uppercase;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size:30px; 
-     text-align:center;
-     padding-bottom:10px;
-    
-    
+#toggle.on #one {
+  transform: rotate(45deg) translateX(6px) translateY(6px);
 }
 
+#toggle.on #two {
+  opacity: 0;
+}
+
+#toggle.on #three {
+  transform: rotate(-45deg) translateX(10px) translateY(-12px);
+}
+
+#resize {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  background: #ddd;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  display: table;
+}
+
+#resize #menu {
+  height: 50px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#resize #menu li {
+  display: block;
+  text-align: center;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 50px;
+  min-height: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+#resize #menu li:hover {
+  background: #212121;
+}
+
+#resize #menu li:hover a {
+  color: #fff;
+  transition: all 0.3s ease-out;
+}
+
+#resize #menu li a {
+  color: #212121;
+}
+
+#resize.active {
+  visibility: visible;
+  opacity: 0.99;
+}
+
+@media (max-width: 768px) {
+  #toggle {
+    visibility: visible;
+    opacity: 1;
+  }
+  nav #menu {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  #resize {
+    visibility: hidden !important;
+  }
+}
  
 /*--------------------------------------------footer/ social*/
 .emptyDiv-color {
@@ -327,6 +439,12 @@ h2::after {
     
   
 }
+#hotel_row {
+     margin: 4%;
+    padding-left:79px;
+}
+
+
 
 /*---------------------------------------------------------Cars*/
 .car-image {
@@ -362,7 +480,7 @@ h2::after {
      font-family: 'Playfair Display SC', serif;
      text-align:center;
     padding-bottom: 18px;
-    color:#ff5722;
+  
     font-weight:700;
 }
 
@@ -375,11 +493,105 @@ h2::after {
 }
 
 .div-colrCar-ratings {
-    background-color:#A80000;
+   background-color:#D8D8D8;
     border:10px solid white;
     padding-top:15px;
     padding-bottom: 58px;
-     /*opacity:.5;*/
      border-radius:10%;
+}
+
+#cars_row {
+    margin: 4%;
+    padding-left:79px;
+}
+
+/*---------------------------------------------------------Restaurant*/
+
+.food-image {
+  background-image: url("../images/restaurant.jpg");
+  background-color: #cccccc;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  font-family: 'Playfair Display SC', serif;
+  margin-top:60px;
+  margin-bottom:30px;
+}
+
+.submitButtonFood {
+   opacity:.8;
+    background-color:#A9A9A9;
+    border-radius:10%;
+    color:white;
     
+}
+
+.food-title  {
+     font-family: 'Playfair Display SC', serif;
+     text-align:center;
+     padding-bottom: 18px;
+     color:white;
+
+}
+
+.div-colrfood-ratings {
+    background-color:#D8D8D8;
+    border:10px solid white;
+    padding-top:15px;
+    padding-bottom: 58px;
+     border-radius:10%;
+
+  
+}
+
+.food-img-edit  {
+       border-radius:50%;
+    height:40%;
+    width:30%;
+    border:2px solid yellow;
+}
+
+#food_row {
+    margin: 4%;
+    padding-left:79px;
+}
+
+
+.zoom-in {
+  padding: 20px;
+ 
+  transition: transform .2s; /* Animation */
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.zoom-in:hover {
+  transform: scale(1.5);
+}
+
+
+/*---------------------------------------------------------scroll up*/
+
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #D8D8D8;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
 }

@@ -84,7 +84,7 @@ nav #menu li:hover {
 }
 
 #toggle {
-  position: fixed;
+  position: absolute;
   right: 20px;
   top: 14px;
   z-index: 999;
@@ -103,10 +103,6 @@ nav #menu li:hover {
   margin: 5px auto;
   backface-visibility: hidden;
 }
-.span {
-    visibility: hidden !important;
-    
-}
 
 #toggle.on #one {
   transform: rotate(45deg) translateX(6px) translateY(6px);
@@ -120,36 +116,36 @@ nav #menu li:hover {
   transform: rotate(-45deg) translateX(10px) translateY(-12px);
 }
 
-#resize {
-  z-index: 1;
-  position: absolute;
-  top: 0px;
-  background: #ddd;
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.3s ease-out;
-  display: table;
-}
+/*#resize {*/
+/*  z-index: 1;*/
+/*  position: absolute;*/
+/*  top: 0px;*/
+/*  background: #ddd;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  visibility: hidden;*/
+/*  opacity: 0;*/
+/*  transition: all 0.3s ease-out;*/
+/*  display: table;*/
+/*}*/
 
-#resize #menu {
-  height: 50px;
-  display: table-cell;
-  vertical-align: middle;
-}
+/*#resize #menu {*/
+/*  height: 50px;*/
+/*  display: table-cell;*/
+/*  vertical-align: middle;*/
+/*}*/
 
-#resize #menu li {
-  display: block;
-  text-align: center;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 50px;
-  min-height: 50px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease-out;
-}
+/*#resize #menu li {*/
+/*  display: block;*/
+/*  text-align: center;*/
+/*  padding: 20px 0;*/
+/*  text-align: center;*/
+/*  font-size: 50px;*/
+/*  min-height: 50px;*/
+/*  font-weight: bold;*/
+/*  cursor: pointer;*/
+/*  transition: all 0.3s ease-out;*/
+/*}*/
 
 #resize #menu li:hover {
   background: #212121;
@@ -560,7 +556,7 @@ h2::after {
 
 
 .zoom-in {
-  padding: 20px;
+  padding: 10px;
  
   transition: transform .2s; /* Animation */
   width: 200px;

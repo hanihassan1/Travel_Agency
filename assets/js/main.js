@@ -2,6 +2,7 @@
 
 var searchHotel = new XMLHttpRequest();
 var myResponse;
+var myCoordinates;
 var link;
 
 
@@ -16,7 +17,7 @@ searchHotel.onreadystatechange = function(){
         updated_hotel_design = updated_hotel_design.replace("525 Bay Street, Toronto",myResponse.results[i].vicinity);
         updated_hotel_design = updated_hotel_design.replace("4.5",myResponse.results[i].rating);
         updated_hotel_design = updated_hotel_design.replace("1,956",myResponse.results[i].user_ratings_total);
-        updated_hotel_design = updated_hotel_design.replace("assets/images/hotelroom3.jpg", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference="+myResponse.results[i].photos[0].photo_reference+"&key=++++++++++++++++++++")
+        updated_hotel_design = updated_hotel_design.replace("assets/images/hotelroom3.jpg", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference="+myResponse.results[i].photos[0].photo_reference+"&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4")
         if(myResponse.results[i].hasOwnProperty('opening_hours')){
         if (myResponse.results[i].opening_hours.open_now == true){
             updated_hotel_design = updated_hotel_design.replace("Open Now","Open Now");
@@ -41,7 +42,7 @@ searchHotel.onreadystatechange = function(){
 $(".submitButtonHotel").on("click", function(){
     findCoordinates($("#hotelSearchId").val());
     var cordString = localStorage.getItem("lat") + "," + localStorage.getItem("lng");
-    link = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + cordString + "&radius=2000&type=lodging&key=+++++++++++++++++++++";
+    link = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + cordString + "&radius=2000&type=lodging&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
      console.log(link);
      searchHotel.open("GET", link);
      searchHotel.send();
@@ -57,6 +58,7 @@ var searchCar = new XMLHttpRequest();
 var serach_coordinates = new XMLHttpRequest();
 var myResponse;
 var link; 
+
 searchCar.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
         myResponse = JSON.parse(this.responseText);
@@ -68,7 +70,7 @@ searchCar.onreadystatechange = function(){
         updated_car_design = updated_car_design.replace("200 Front Street West, Toronto",myResponse.results[i].vicinity);
         updated_car_design = updated_car_design.replace("4.2",myResponse.results[i].rating);
         updated_car_design = updated_car_design.replace("156",myResponse.results[i].user_ratings_total);
-        updated_car_design = updated_car_design.replace("assets/images/cars.jpg", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference="+myResponse.results[i].photos[0].photo_reference+"&key=++++++++++++++++++")
+        updated_car_design = updated_car_design.replace("assets/images/cars.jpg", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference="+myResponse.results[i].photos[0].photo_reference+"&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4")
          if(myResponse.results[i].hasOwnProperty('opening_hours')){
         if (myResponse.results[i].opening_hours.open_now == true){
             updated_car_design = updated_car_design.replace("Open Now","Open Now");
@@ -91,7 +93,7 @@ searchCar.onreadystatechange = function(){
 $(".submitButtonCars").on("click", function(){
     findCoordinates($("#carSearchId").val());
     var cordString = localStorage.getItem("lat") + "," + localStorage.getItem("lng");
-    link = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + cordString + "&radius=2000&type=lodging&key=+++++++++++++++++++++++++++";
+    link = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + cordString + "&radius=2000&type=lodging&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
      console.log(link);
 
    
@@ -117,7 +119,7 @@ searchFood.onreadystatechange = function(){
         updated_food_design  = updated_food_design.replace("4.1",myResponse.results[i].rating);
         updated_food_design = updated_food_design.replace("239",myResponse.results[i].user_ratings_total);
         updated_food_design = updated_food_design.replace("2",myResponse.results[i].price_level);
-        updated_food_design = updated_food_design.replace("assets/images/rest1.jpg", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference="+myResponse.results[i].photos[0].photo_reference+"&key=++++++++++")
+        updated_food_design = updated_food_design.replace("assets/images/rest1.jpg", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference="+myResponse.results[i].photos[0].photo_reference+"&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4")
         if(myResponse.results[i].hasOwnProperty('opening_hours')){
         if (myResponse.results[i].opening_hours.open_now == true){
          updated_food_design  = updated_food_design.replace("Open Now","Open Now");
@@ -143,7 +145,7 @@ searchFood.onreadystatechange = function(){
 $(".submitButtonFood").on("click", function(){
     findCoordinates($("#foodSearchId").val());
     var cordString = localStorage.getItem("lat") + "," + localStorage.getItem("lng");
-    link = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + cordString + "&radius=2000&type=lodging&key=++++++++++++++";
+    link = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + cordString + "&radius=2000&type=lodging&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
      console.log(link);
 
      searchFood.open("GET", link);
@@ -167,15 +169,23 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-var input = document.getElementById('hotelSearchId');
+/*--------------------------------------------------------autocomplete*/
+function initAutoComplete(){
+   var input = document.getElementById('hotelSearchId');
+var input2 = document.getElementById('carSearchId');
+var input3 = document.getElementById('foodSearchId');
 var options = {
   types: ['(cities)']
 };
 
 autocomplete = new google.maps.places.Autocomplete(input, options);
+autocomplete = new google.maps.places.Autocomplete(input2, options);
+autocomplete = new google.maps.places.Autocomplete(input3, options); 
+}
+
 
 function findCoordinates(place){
-    link = "https://maps.googleapis.com/maps/api/geocode/json?address="+ place +"&key=++++++++++++++";
+    link = "https://maps.googleapis.com/maps/api/geocode/json?address="+ place +"&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
      serach_coordinates.open("GET", link);
      serach_coordinates.send();
      
@@ -189,4 +199,30 @@ function findCoordinates(place){
     }
     
     return true;
+}
+
+
+
+let mainNav = document.getElementById("js-menu");
+let navBarToggle = document.getElementById("js-navbar-toggle");
+
+navBarToggle.addEventListener("click", function() {
+  mainNav.classList.toggle("active");
+});
+
+
+
+/*--------------------------------------------------------googlemap*/
+
+ var map;
+      function initMap(){
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat:  43.659860, lng: -79.486180},
+          zoom: 15
+        });
+      }
+      
+    function initialize() {
+   initMap();
+   initAutoComplete();
 }

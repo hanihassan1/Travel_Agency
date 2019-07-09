@@ -15,160 +15,158 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover.css" />
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4&libraries=places"></script>
+    <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4&libraries=places&callback=initialize" async defer></script>-->
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4&callback=initMap"async defer></script>-->
     <title>Document</title>
 </head>
 
 <body>
     <header>
-        <nav>
-            <span id="brand">Ontario Wanderer</span>
 
 
-            <ul id="menu">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="#page2">HOTEL</a>
-
-                    <li><a href="#page3">CARS</a></li>
-                    <li><a href="#page4">RESTAURANT</a></li>
+        <nav class="navbar">
+            <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+            <a href="index.html" class="logo">Ontario Wanderer</a>
+            <ul class="main-nav" id="js-menu">
+                <li>
+                    <a href="index.html" class="nav-links">HOME</a>
+                </li>
+                <li>
+                    <a href="#page2" class="nav-links">HOTEL</a>
+                </li>
+                <li>
+                    <a href="#page3" class="nav-links">CARS</a>
+                </li>
+                <li>
+                    <a href="#page4" class="nav-links">RESTAURANT</a>
+                </li>
             </ul>
-
-            <div id="toggle">
-                <div class="span" id="one"></div>
-                <div class="span" id="two"></div>
-                <div class="span" id="three"></div>
-            </div>
         </nav>
-
-        <div id="resize">
-            <ul id="menu">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="#page2">HOTEL</a></li>
-                <li><a href="#page3">CARS</a></li>
-                <li><a href="#page4">RESTAURANT</a></li>
-            </ul>
-        </div>
-        
-
 
 
     </header>
 
     <section class="container-fluid">
-        <div class="row no-gutter carousel-paddin">
-            <div class="col-12">
+        <div class="row no-gutters carousel-paddin">
 
-            </div>
-            <div class="row no-gutter">
 
-                <div class="col-md-1"></div>
-                <div class="col-md-10">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
 
-                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-                        <div class="carousel-inner">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                    <div class="carousel-inner">
 
-                            <div class="carousel-item active">
-                                <img src="assets/images/toronto3.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/images/niagrafalls.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/images/autum.jpg" class="d-block w-100" alt="...">
-                            </div>
+                        <div class="carousel-item active my-img">
+                            <img src="assets/images/toronto3.jpg" class="d-block w-100" alt="...">
                         </div>
-
-
+                        <div class="carousel-item my-img">
+                            <img src="assets/images/niagrafalls.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/autum.jpg" class="d-block w-100" alt="...">
+                        </div>
                     </div>
+
+
                 </div>
-                <div class="col-md-1"></div>
             </div>
+            <div class="col-md-1"></div>
 
+        </div>
     </section>
+
     <div class="container-fluid">
-        <div class="row no-gutter">
-            <div class="col-md-6 about-me-div">
+        <div class="row no-gutters">
+            <div class="col-md-1"></div>
+            <div class="col-md-10 about-me-div">
                 <h1 class="about-title">ABOUT</h1>
-                <p class="about-p"><i>Ontario Wanderer is a Toronto based travel agency handled by professionals with decades of experience in the travel industry. Our forte includes corporate travel, leisure travel and all other travel related arrangements.</i></p>
+                <p class="about-p">Ontario Wanderer is a Toronto based travel agency handled by professionals with decades of experience in the travel industry. Our forte includes family travel, leisure travel and all other travel related arrangements.</p>
 
             </div>
+            <div class="col-md-1"></div>
 
         </div>
     </div>
 
     <section class="container-fluid">
-        <div class="container">
-            <div class="row no-gutter testimony-div">
 
-                <div class="col-md-6">
-                    <h2>Testimonials</h2>
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="row no-gutters testimony-div">
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <h2>Testimonials</h2>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                        </ol>
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
 
-                        <div class="carousel-inner">
-                            <div class="item carousel-item active">
-                                <div class="img-box"><img src="assets/images/testimonials1.jpg" alt=""></div>
-                                <p class="testimonial"><i>“We had the trip of a lifetime. Everyday was a great adventure."<i></p>
+                    <div class="carousel-inner">
+                        <div class="item carousel-item active">
+                            <div class="img-box"><img src="assets/images/testimonials1.jpg" alt=""></div>
+                            <p class="testimonial"><i>"We had the trip of a lifetime. Everyday was a great adventure."<i></p>
 						<p class="overview"><b>Paula Wilson</b></p>
 					</div>
 					<div class="item carousel-item">
 						<div class="img-box"><img src="assets/images/testimonial2boy.jpg" alt=""></div>
-						<p class="testimonial">My family and I had the best time of our lives. Thank you Ontario Wanderer, your website is super helpful and I will definitely be comeing back. Cheers!</p>
+						<p class="testimonial">"My family and I had the best time of our lives. Thank you Ontario Wanderer, your website is super helpful and I will definitely be coming back. Cheers!"</p>
 						<p class="overview"><b>Antonio Moreno</b></p>
 					</div>
 					<div class="item carousel-item">
 						<div class="img-box"><img src="assets/images/testimonials3girl.jpg" alt=""></div>
-						<p class="testimonial">I love exploring my providence, there is so much to discover. Thank you for making it simple for me to navigate and find exactly what I was looking for.</p>
+						<p class="testimonial">"I love exploring my province, there is so much to discover. Thank you for making it simple for me to navigate and find exactly what I was looking for."</p>
 						<p class="overview"><b>Amanda Smith</b></p>
 					</div>
 				</div>
 				
-				<a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
-					<i class="fa fa-angle-left"></i>
-                                    </a>
-                                    <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
-					<i class="fa fa-angle-right"></i>
-				</a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 map-div">
-                            <div class="mapouter">
-                                <div class="gmap_canvas">
-                                    <iframe width="500" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=2%20bloor%20west%2C%20toronto%2C%20m4w%203r1&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-                
-            </iframe>
-                                    <a href="https://www.pureblack.de"></a>
-                                </div>
-                            </div>
+				<!--<a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">-->
+				<!--	<i class="fa fa-angle-left"></i>-->
+    <!--             </a>-->
+    <!--            <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">-->
+				<!--	<i class="fa fa-angle-right"></i>-->
+				<!--</a>-->
                         </div>
                     </div>
+
+                    <div id="map_canvas_container" class="col-md-5">
+                        <div id="map" style="height:100%; width:100%; background-color:red;" class="test">
+
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
                 </div>
-           
+
+
     </section>
 
 
-    <div class="container-fluid">
-        <div class="hotel-image">
-            <div class="hotel-title">
-                <h1 style="font-size:50px;color:#484848">Hotel</h1>
-                <input type="text" class="hvr-glow" id="hotelSearchId">
-                <button type="button" class="submitButtonHotel hvr-push">Find Room</button>
-            </div>
-        </div>
-    </div>
 
-
-    <div id="page2" class="hotel-div">
+    <div id="page2" class="hotel-div container-fluid">
         <a id="Hotels" class="pageTwoContent"></a>
 
-        <div class="container-fluid">
-            <div id="hotel_row" class="row no-gutter ratings-edit">
-                    
+        <div class="row no-gutters">
+
+            <div class="col-md-1"></div>
+
+            <div class="hotel-image col-md-10">
+                
+                <div class="hotel-title">
+                    <h1 style="font-size:50px;color:#484848">Hotel</h1>
+                    <input type="text" placeholder="Type In Here" class="hvr-glow search" id="hotelSearchId">
+                    <button type="button" class="submitButtonHotel hvr-push">Find Room</button>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+
+
+
+        <div class="container-fluid wrap">
+            <div id="hotel_row" class="row no-gutters ratings-edit">
+
                 <div class="col-md-5 div-colr-ratings">
                     <h3 class="hotelName-title">Marriott Downtown at CF Toronto Eaton Centre</h3>
                     <img src="assets/images/hotelroom3.jpg" class="hotel-img-edit zoom-in" alt="">
@@ -200,150 +198,163 @@
                 </div>
             </div>
         </div>
-
-    </div>
-
-    <div class="container-fluid">
-        <div class="car-image">
-            <div class="car-title">
-                <h1 style="font-size:50px;font-weight:700;color:#48484">Cars</h1>
-                <input type="text" class="hvr-glow" id="carSearchId">
-                <button type="button" class="submitButtonCars hvr-push">Find Rental</button>
-            </div>
         </div>
-    </div>
 
 
 
 
-    <div class="container-fluid">
-        <div id="page3" class="cars-div">
-            <a id="Cars" class="pageThreeContent"></a>
-
-
-            <div id="cars_row" class="row no-gutter ratings-edit">
-
-                <div class="col-md-5 div-colrCar-ratings">
-                    <h3 class="CarsName-title">Discount Car & Truck Rentals</h3>
-                    <img src="assets/images/cars.jpg" class="Cars-img-edit zoom-in" alt="">
-                    <div class="ratingStarCars"> Rating: 4.2
-                        <p>Based on 156 guest reviews</p>
-                    </div>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <div class="openClosed"> Open Now</div>
-                    <div class="rest-location">200 Front Street West, Toronto</div>
-
-                </div>
-                <div class="col-md-5 div-colrCar-ratings">
-                    <h3 class="CarsName-title">Enterprise Rent-A-Car</h3>
-                    <img src="assets/images/cars.jpg" class="Cars-img-edit zoom-in" alt="">
-                    <div class="ratingStarCars"> Rating: 4.3
-                        <p>Based on 423 guest reviews</p>
-                    </div>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <div class="openClosed"> Open Now</div>
-                    <div class="rest-location">134 Jarvis Street, Toronto</div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-    <!--///////////////////////////////////////////////////////-->
-
-
-    <div class="container-fluid">
-        <div class="food-image">
-            <div class="food-title">
-                <h1 style="font-size:50px;font-weight:700;color:#48484">Restaurant</h1>
-                <input type="text" class="hvr-glow" id="foodSearchId">
-                <button type="button" class="submitButtonFood hvr-push">Find Restaurant</button>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="container-fluid">
-        <div id="page4" class="food-div">
-            <a id="food" class="pageFourContent"></a>
-
-
-            <div id="food_row" class="row no-gutter ratings-edit">
-
-                <div class="col-md-5 div-colrfood-ratings">
-                    <h3 class="foodName-title">B.GOOD</h3>
-                    <img src="assets/images/rest1.jpg" class="food-img-edit zoom-in" alt="">
-                    <div class="ratingStarFood"> Rating: 4.1
-                        <p>Based on 239 guest reviews</p>
-                    </div>
-                    <div class="pricePointCars"> price_level: 2
-
-                    </div>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <div class="openClosed"> Open Now</div>
-                    <div class="rest-location">100 Front St E, Toronto</div>
-
-                </div>
-
-                <div class="col-md-5 div-colrfood-ratings">
-                    <h3 class="foodName-title">Salus Fresh Foods</h3>
-                    <img src="assets/images/rest2.jpg" class="food-img-edit zoom-in" alt="">
-                    <div class="ratingStarFood"> Rating: 4.4
-                        <p>Based on 108 guest reviews</p>
-                    </div>
-                    <div class="pricePointCars"> price_level: 1
-
-                    </div>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <div class="openClosed"> Open Now</div>
-                    <div class="rest-location">25 Carlton St, Toronto</div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
-
-    <footer>
         <div class="container-fluid">
+            <div id="page3" class="cars-div">
+                <a id="Cars" class="pageThreeContent"></a>
 
-            <div class="row no-gutter footer-bor">
-                <div class="col-md-4 emptyDiv-color"></div>
-                <div class="col-md-4 brand-footer"><strong>Ontario Wanderer</strong></div>
+                <div id="wrap" class="row no-gutters">
 
-                <div class="col-md-4 no-gutter wrapper socialDiv">
-                    <a target="_blank" href="your_url_here"><i class="fab fa-facebook"></i></a>
-                    <a target="_blank" href="your_url_here"><i class="fab fa-instagram"></i></a>
-                    <a target="_blank" href="your_url_here"><i class="fab fa-twitter-square"></i></a>
-                    <a target="_blank" href="your_url_here"><i class="fab fa-youtube"></i></a>
+                    <div class="col-md-1"></div>
+
+                    <div class="car-image col-md-10">
+                        <div class="car-title">
+                            <h1 style="font-size:50px;font-weight:700;color:#48484">Cars</h1>
+                            <input type="text" placeholder="Type In Here" class="hvr-glow" id="carSearchId">
+                            <button type="button" class="submitButtonCars hvr-push">Find Rental</button>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+
+
+
+
+
+
+
+                <div id="cars_row" class="row no-gutters ratings-edit">
+
+                    <div class="col-md-5 div-colrCar-ratings">
+                        <h3 class="CarsName-title">Discount Car & Truck Rentals</h3>
+                        <img src="assets/images/cars.jpg" class="Cars-img-edit zoom-in" alt="">
+                        <div class="ratingStarCars"> Rating: 4.2
+                            <p>Based on 156 guest reviews</p>
+                        </div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <div class="openClosed"> Open Now</div>
+                        <div class="rest-location">200 Front Street West, Toronto</div>
+
+                    </div>
+                    <div class="col-md-5 div-colrCar-ratings">
+                        <h3 class="CarsName-title">Enterprise Rent-A-Car</h3>
+                        <img src="assets/images/cars4.jpg" class="Cars-img-edit zoom-in" alt="">
+                        <div class="ratingStarCars"> Rating: 4.3
+                            <p>Based on 423 guest reviews</p>
+                        </div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <div class="openClosed"> Open Now</div>
+                        <div class="rest-location">134 Jarvis Street, Toronto</div>
+
+                    </div>
+
                 </div>
             </div>
         </div>
-    </footer>
 
 
-    <script type="text/javascript" src="assets/js/main.js"></script>
+
+
+
+
+        <div class="container-fluid">
+            <div id="page4" class="food-div">
+                <a id="food" class="pageFourContent"></a>
+
+                <div id="wrap" class="row no-gutters">
+                    <div class="col-md-1"></div>
+                    <div class="food-image col-md-10">
+                        <div class="food-title">
+                            <h1 style="font-size:50px;font-weight:700;color:#48484">Restaurant</h1>
+                            <input type="text" placeholder="Type In Here" class="hvr-glow search" id="foodSearchId">
+                            <button type="button" class="submitButtonFood hvr-push">Find Restaurant</button>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+
+
+
+
+
+                <div id="food_row" class="row no-gutters ratings-edit">
+
+                    <div class="col-md-5 div-colrfood-ratings">
+                        <h3 class="foodName-title">B.GOOD</h3>
+                        <img src="assets/images/rest1.jpg" class="food-img-edit zoom-in" alt="">
+                        <div class="ratingStarFood"> Rating: 4.1
+                            <p>Based on 239 guest reviews</p>
+                        </div>
+                        <div class="pricePointCars">Price level: 2
+
+                        </div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <div class="openClosed"> Open Now</div>
+                        <div class="rest-location">100 Front St E, Toronto</div>
+
+                    </div>
+
+                    <div class="col-md-5 div-colrfood-ratings">
+                        <h3 class="foodName-title">Salus Fresh Foods</h3>
+                        <img src="assets/images/rest2.jpg" class="food-img-edit zoom-in" alt="">
+                        <div class="ratingStarFood"> Rating: 4.4
+                            <p>Based on 108 guest reviews</p>
+                        </div>
+                        <div class="pricePointCars"> Price level: 1
+
+                        </div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <div class="openClosed"> Open Now</div>
+                        <div class="rest-location">25 Carlton St, Toronto</div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+        <footer>
+            <div class="container-fluid">
+
+                <div class="row no-gutters footer-bor">
+                    <div class="col-md-4 emptyDiv-color"></div>
+                    <div class="col-md-4 brand-footer"><strong>Ontario Wanderer</strong></div>
+
+                    <div class="col-md-4 wrapper socialDiv">
+                        <a target="_blank" href="your_url_here"><i class="fab fa-facebook"></i></a>
+                        <a target="_blank" href="your_url_here"><i class="fab fa-instagram"></i></a>
+                        <a target="_blank" href="your_url_here"><i class="fab fa-twitter-square"></i></a>
+                        <a target="_blank" href="your_url_here"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <script type="text/javascript" src="assets/js/main.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4&libraries=places&callback=initialize" async defer></script>
 </body>
 
 </html>

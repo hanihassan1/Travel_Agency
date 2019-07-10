@@ -58,9 +58,9 @@ html {
 
   .logo {
     margin-top: 0;
-    font-size: 50px;
+    font-size: 40px;
     color: white;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
   }
 
   .navbar-toggle {
@@ -69,7 +69,7 @@ html {
 
   .logo:hover,
   .nav-links:hover {
-    color: black;
+    color: orange;
   }
 }
 
@@ -306,6 +306,7 @@ h2::after {
 
 .hotelName-title {
   font-size: 17px;
+  text-align:center;
 }
 
 .hotel-title {
@@ -324,6 +325,7 @@ h2::after {
   height: 40%;
   width: 30%;
   border: 2px solid yellow;
+
 }
 
 .div-colr-ratings {
@@ -365,12 +367,31 @@ h2::after {
   margin-right: 10%;
 }
 
+.ratingStarMarriot {
+  text-align:center;
+  padding-top: 6px;
+}
 
+.hotelName-title-secnd{
+  padding-bottom:5px;
+  font-size: 17px;
+  text-align:center;
 
+}
+
+.hotel-div{
+margin-top: -135px;
+}
+
+.hotel-locatcar-loc-price {
+  text-align:center;
+}
 /*---------------------------------------------------------Cars*/
 
 .CarsName-title {
   font-size: 17px;
+  text-align:center;
+  padding-bottom:5px;
 }
 
 
@@ -392,7 +413,7 @@ h2::after {
  
 
   color: white;
-   font-family: 'Playfair Display SC', serif;
+  font-family: 'Playfair Display SC', serif;
   text-align: center;
   padding-bottom: 18px;
  
@@ -427,6 +448,7 @@ h2::after {
   padding-top: 15px;
   padding-bottom: 58px;
   border-radius: 10%;
+
 }
 
 #cars_row {
@@ -437,10 +459,22 @@ h2::after {
   margin-right: 10%;
 }
 
+.ratingStarCars{
+
+text-align:center;
+padding-top: 6px;
+}
+
+.car-loc-price{
+  text-align:center;
+}
+
 /*---------------------------------------------------------Restaurant*/
 
 .foodName-title {
   font-size: 17px;
+   text-align:center;
+   padding-bottom:5px;
 }
 
 .food-image {
@@ -490,28 +524,22 @@ h2::after {
 }
 
 #food_row {
-  /*margin: 4%;*/
-  /*padding-left: 79px;*/
+  
   font-size: 13px;
    margin-left: 22%;
   margin-right: 10%;
 }
 
 
+.ratingStarFood{
+  text-align:center;
+  padding-top: 6px;
 
-.zoom-in {
-  padding: 10px;
-
-  transition: transform .2s;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
 }
 
-.zoom-in:hover {
-  transform: scale(1.2);
+.rest-loc-price {
+  text-align:center;
 }
-
 
 /*---------------------------------------------------------scroll up*/
 
@@ -536,4 +564,20 @@ h2::after {
 }
 
 
+/*---------------------------------------------------------all card photos zoom-in*/
+
+
+.zoom-in {
+  padding: 5px;
+
+  transition: transform .5s;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  margin-left:90px;
+}
+
+.zoom-in:hover {
+  transform: scale(1.1);
+}
 

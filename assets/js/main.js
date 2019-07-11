@@ -63,7 +63,7 @@ searchCar.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
         myResponse = JSON.parse(this.responseText);
         console.log(myResponse);
-        var car_design = '<div class="col-md-5 div-colrCar-ratings"><h3 class="CarsName-title">Discount Car & Truck Rentals</h3> <img src="assets/images/cars.jpg" class="Cars-img-edit zoom-in" alt=""><div class="ratingStarCars"> Rating: 4.2<p>Based on 156 guest reviews</p></div> </span><div class="openClosed"> Open Now</div><div class="rest-location">200 Front Street West, Toronto</div></div>';
+        var car_design = '<div class="col-md-5 div-colrCar-ratings"><h3 class="CarsName-title">Discount Car & Truck Rentals</h3> <img src="assets/images/cars.jpg" class="Cars-img-edit zoom-in" alt=""><div class="ratingStarCars"> Rating: 4.2<p>Based on 156 guest reviews</p></div> </span><div class="car-loc-price"> Open Now</div><div class="car-loc-price">200 Front Street West, Toronto</div></div>';
         $("#cars_row").html("");
         for (var i = 0; i<4; i++){
         var updated_car_design = car_design.replace("Enterprise Rent-A-Car", myResponse.results[i].name);
@@ -111,7 +111,7 @@ searchFood.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
         myResponse = JSON.parse(this.responseText);
         console.log(myResponse);
-        var food_design ='<div class="col-md-5 div-colrfood-ratings"><h3 class="foodName-title">B.GOOD</h3> <img src="assets/images/rest1.jpg" class="food-img-edit zoom-in" alt=""><div class="ratingStarFood"> Rating: 4.1<p>Based on 239 guest reviews</p></div><div class="pricePointCars"> price_level: 2</div> <div class="openClosed"> Open Now</div><div class="rest-location">100 Front St E, Toronto</div></div>';
+        var food_design ='<div class="col-md-5 div-colrfood-ratings"><h3 class="foodName-title">B.GOOD</h3> <img src="assets/images/rest1.jpg" class="food-img-edit zoom-in" alt=""><div class="ratingStarFood"> Rating: 4.1<p>Based on 239 guest reviews</p></div><div class="pricePointCars"> price_level: 2</div> <div class="rest-loc-price"> Open Now</div><div class="rest-loc-price">100 Front St E, Toronto</div></div>';
         $("#food_row").html("");
         for (var i = 0; i<4; i++){
         var updated_food_design = food_design.replace("B.GOOD", myResponse.results[i].name);
@@ -233,3 +233,6 @@ navBarToggle.addEventListener("click", function() {
 $('#btn-one').click(function() {
   $('#hotel_row').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Loading...');
 });
+
+
+

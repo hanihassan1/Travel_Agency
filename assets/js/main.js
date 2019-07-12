@@ -9,7 +9,14 @@ var link;
 
 searchHotel.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-        myResponse = JSON.parse(this.responseText);
+        myResponse = JSON.parse(this.responseText);  
+        if ((myResponse.results).length == 0){
+            $("#hotel_row").html("");
+            $("#hotel_row").append("<h2> No Results found for this location, Please try another destination</h2>");
+        }
+         else{
+        console.log(myResponse);
+
         var hotel_design = '<div class="col-md-5 div-colr-ratings"><h3 class="hotelName-title">Marriott Downtown at CF Toronto Eaton Centre</h3> <img src="assets/images/hotelroom3.jpg" class="hotel-img-edit zoom-in" alt=""><div class="ratingStarMarriot"> Rating: 4.5<p>Based on 1,956 guest reviews</p></div> </span><div class="hotel-locatcar-loc-price"> Open Now</div><div class="hotel-locatcar-loc-price">525 Bay Street, Toronto</div></div>';
         $("#hotel_row").html("");
         for (var i = 0; i<4; i++){
@@ -34,6 +41,7 @@ searchHotel.onreadystatechange = function(){
         $("#hotel_row").append(updated_hotel_design);
       
         }
+         }
     }
     }
     
@@ -62,15 +70,23 @@ var link;
 searchCar.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
         myResponse = JSON.parse(this.responseText);
+        if ((myResponse.results).length == 0){
+            $("#cars_row").html("");
+            $("#cars_row").append("<h2> No Results found for this location, Please try another destination</h2>");
+        }
+        else{
         console.log(myResponse);
         var car_design = '<div class="col-md-5 div-colrCar-ratings"><h3 class="CarsName-title">Discount Car & Truck Rentals</h3> <img src="assets/images/cars.jpg" class="Cars-img-edit zoom-in" alt=""><div class="ratingStarCars"> Rating: 4.2<p>Based on 156 guest reviews</p></div> </span><div class="car-loc-price"> Open Now</div><div class="car-loc-price">200 Front Street West, Toronto</div></div>';
         $("#cars_row").html("");
         for (var i = 0; i<4; i++){
-        var updated_car_design = car_design.replace("Enterprise Rent-A-Car", myResponse.results[i].name);
+        var updated_car_design = car_design.replace("Discount Car & Truck Rentals", myResponse.results[i].name);
         updated_car_design = updated_car_design.replace("200 Front Street West, Toronto",myResponse.results[i].vicinity);
         updated_car_design = updated_car_design.replace("4.2",myResponse.results[i].rating);
         updated_car_design = updated_car_design.replace("156",myResponse.results[i].user_ratings_total);
-        updated_car_design = updated_car_design.replace("assets/images/cars.jpg", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference="+myResponse.results[i].photos[0].photo_reference+"&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4")
+        if (myResponse.results[i].hasOwnProperty('photos')){
+            updated_car_design = updated_car_design.replace("assets/images/cars.jpg", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference="+myResponse.results[i].photos[0].photo_reference+"&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4")
+        }
+        
          if(myResponse.results[i].hasOwnProperty('opening_hours')){
         if (myResponse.results[i].opening_hours.open_now == true){
             updated_car_design = updated_car_design.replace("Open Now","Open Now");
@@ -85,6 +101,7 @@ searchCar.onreadystatechange = function(){
       
         }
     }
+}
     }
 
     
@@ -93,7 +110,7 @@ searchCar.onreadystatechange = function(){
 $(".submitButtonCars").on("click", function(){
     findCoordinates($("#carSearchId").val());
     var cordString = localStorage.getItem("lat") + "," + localStorage.getItem("lng");
-    link = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + cordString + "&radius=2000&type=lodging&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
+    link = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + cordString + "&radius=2000&type=car_rental&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
      console.log(link);
 
    
@@ -110,8 +127,15 @@ var link;
 searchFood.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
         myResponse = JSON.parse(this.responseText);
+                
+        if ((myResponse.results).length == 0){
+         $("#food_row").html("");
+        $("#food_row").append("<h2> No Results found for this location, Please try another destination</h2>");
+        
+        }
+        else{
         console.log(myResponse);
-        var food_design ='<div class="col-md-5 div-colrfood-ratings"><h3 class="foodName-title">B.GOOD</h3> <img src="assets/images/rest1.jpg" class="food-img-edit zoom-in" alt=""><div class="ratingStarFood"> Rating: 4.1<p>Based on 239 guest reviews</p></div><div class="pricePointCars"> price_level: 2</div> <div class="rest-loc-price"> Open Now</div><div class="rest-loc-price">100 Front St E, Toronto</div></div>';
+        var food_design ='<div class="col-md-5 div-colrfood-ratings"><h3 class="foodName-title">B.GOOD</h3> <img src="assets/images/rest1.jpg" class="food-img-edit zoom-in" alt=""><div class="rest-loc-price"> Rating: 4.1<p>Based on 239 guest reviews</p></div><div class="rest-loc-price"> price_level: 2</div> <div class="rest-loc-price"> Open Now</div><div class="rest-loc-price">100 Front St E, Toronto</div></div>';
         $("#food_row").html("");
         for (var i = 0; i<4; i++){
         var updated_food_design = food_design.replace("B.GOOD", myResponse.results[i].name);
@@ -137,6 +161,7 @@ searchFood.onreadystatechange = function(){
         $("#food_row").append(updated_food_design );
       
         }
+        }
     }
     }
     
@@ -145,7 +170,7 @@ searchFood.onreadystatechange = function(){
 $(".submitButtonFood").on("click", function(){
     findCoordinates($("#foodSearchId").val());
     var cordString = localStorage.getItem("lat") + "," + localStorage.getItem("lng");
-    link = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + cordString + "&radius=2000&type=lodging&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
+    link = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + cordString + "&radius=2000&type=restaurant&keyword=food&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
      console.log(link);
 
      searchFood.open("GET", link);

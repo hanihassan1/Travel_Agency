@@ -29,7 +29,12 @@ html {
   text-decoration: none;
 }
 
-@media screen and (min-width: 768px) {
+/*#js-menu{*/
+    
+/*    visibility: visible;*/
+/*  }*/
+
+@media (min-width: 768px) {
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -44,6 +49,7 @@ html {
     margin-right: 30px;
     flex-direction: row;
     justify-content: flex-end;
+     visibility: visible;
   }
 
   .main-nav li {
@@ -51,7 +57,7 @@ html {
   }
 
   .nav-links {
-    margin-left: 40px;
+    margin-left: 30px;
     color: white;
     font-size: 20px;
   }
@@ -63,50 +69,82 @@ html {
     padding-bottom: 30px;
   }
 
-  .navbar-toggle {
-    display: none;
-  }
+
+  /*.navbar-toggle {*/
+  /*  display: none;*/
+  /*}*/
 
   .logo:hover,
   .nav-links:hover {
     color: orange;
   }
 }
-
-
-#resize #menu li:hover {
-  background: #212121;
+.nav-links-tog {
+  color:orange;
 }
 
-#resize #menu li:hover a {
-  color: #fff;
-  transition: all 0.3s ease-out;
-}
-
-#resize #menu li a {
-  color: #212121;
-}
-
-#resize.active {
-  visibility: visible;
-  opacity: 0.99;
-}
-
-@media (max-width: 768px) {
-  #toggle {
-    visibility: visible;
-    opacity: 1;
+.navbar-toggler{
+      visibility: hidden;
   }
-  nav #menu {
-    display: none;
-  }
-}
 
-@media (min-width: 768px) {
-  #resize {
-    visibility: hidden !important;
+
+@media (max-width: 767px){
+  .navbar-toggler{
+      visibility: visible;
+       opacity: 1;
+  }
+  .main-nav{
+    visibility: hidden;
+  }
+  
+  .bg-dark{    
+  height: 106px!important;
+  }
+  .slogan {
+        visibility: hidden;
+  }
+  
+ .logo {
+    margin-top: 0;
+    font-size: 30px;
+    color: white;
+    padding-bottom: 30px;
   }
 }
+
+/*#resize #menu li:hover {*/
+/*  background: #212121;*/
+/*}*/
+
+/*#resize #menu li:hover a {*/
+/*  color: #fff;*/
+/*  transition: all 0.3s ease-out;*/
+/*}*/
+
+/*#resize #menu li a {*/
+/*  color: #212121;*/
+/*}*/
+
+/*#resize.active {*/
+/*  visibility: visible;*/
+/*  opacity: 0.99;*/
+/*}*/
+
+/*@media (max-width: 768px) {*/
+/*  #toggle {*/
+/*    visibility: visible;*/
+/*    opacity: 1;*/
+/*  }*/
+/*  nav #menu {*/
+/*    display: none;*/
+/*  }*/
+/*}*/
+
+/*@media (min-width: 768px) {*/
+/*  #resize {*/
+/*    visibility: hidden !important;*/
+/*  }*/
+/*}*/
 
 /*--------------------------------------------footer/ social*/
 

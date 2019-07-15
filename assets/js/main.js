@@ -17,13 +17,15 @@ searchHotel.onreadystatechange = function(){
          else{
         console.log(myResponse);
 
-        var hotel_design = '<div class="col-md-5 div-colr-ratings"><h3 class="hotelName-title">Marriott Downtown at CF Toronto Eaton Centre</h3> <img src="assets/images/hotelroom3.jpg" class="hotel-img-edit zoom-in" alt=""><div class="ratingStarMarriot"> Rating: 4.5<p>Based on 1,956 guest reviews</p></div> </span><div class="hotel-locatcar-loc-price"> Open Now</div><div class="hotel-locatcar-loc-price">525 Bay Street, Toronto</div></div>';
+        var hotel_design = '<div class="col-md-5 div-colr-ratings"><a target="_blank" href="https://maps.google.com/maps/contrib/116195274436403701222/photos"> <h3 class="hotelName-title">Marriott Downtown at CF Toronto Eaton Centre</h3> <img src="assets/images/hotelroom3.jpg" class="hotel-img-edit zoom-in" alt=""></a><div class="ratingStarMarriot"> Rating: 4.5<p>Based on 1,956 guest reviews</p></div> </span><div class="hotel-locatcar-loc-price"> Open Now</div><div class="hotel-locatcar-loc-price">525 Bay Street, Toronto</div></div>';
         $("#hotel_row").html("");
+        console.log (myResponse.results[0].photos[0].html_attributions[0].match(/"([^']+)"/)[1]);
         for (var i = 0; i<4; i++){
         var updated_hotel_design = hotel_design.replace("Marriott Downtown at CF Toronto Eaton Centre", myResponse.results[i].name);
         updated_hotel_design = updated_hotel_design.replace("525 Bay Street, Toronto",myResponse.results[i].vicinity);
         updated_hotel_design = updated_hotel_design.replace("4.5",myResponse.results[i].rating);
         updated_hotel_design = updated_hotel_design.replace("1,956",myResponse.results[i].user_ratings_total);
+        updated_hotel_design = updated_hotel_design.replace("https://maps.google.com/maps/contrib/116195274436403701222/photos",myResponse.results[i].photos[0].html_attributions[0].match(/"([^']+)"/)[1]);
         updated_hotel_design = updated_hotel_design.replace("assets/images/hotelroom3.jpg", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference="+myResponse.results[i].photos[0].photo_reference+"&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4")
         if(myResponse.results[i].hasOwnProperty('opening_hours')){
         if (myResponse.results[i].opening_hours.open_now == true){
@@ -76,13 +78,16 @@ searchCar.onreadystatechange = function(){
         }
         else{
         console.log(myResponse);
-        var car_design = '<div class="col-md-5 div-colrCar-ratings"><h3 class="CarsName-title">Discount Car & Truck Rentals</h3> <img src="assets/images/cars.jpg" class="Cars-img-edit zoom-in" alt=""><div class="ratingStarCars"> Rating: 4.2<p>Based on 156 guest reviews</p></div> </span><div class="car-loc-price"> Open Now</div><div class="car-loc-price">200 Front Street West, Toronto</div></div>';
+        var car_design = '<div class="col-md-5 div-colrCar-ratings"><a target="_blank" href="https://maps.google.com/maps/contrib/116000449024716612420/photos"><h3 class="CarsName-title">Discount Car & Truck Rentals</h3> <img src="assets/images/cars.jpg" class="Cars-img-edit zoom-in" alt=""></a> <div class="ratingStarCars"> Rating: 4.2<p>Based on 156 guest reviews</p></div> </span><div class="car-loc-price"> Open Now</div><div class="car-loc-price">200 Front Street West, Toronto</div></div>';
         $("#cars_row").html("");
+        console.log (myResponse.results);
         for (var i = 0; i<4; i++){
         var updated_car_design = car_design.replace("Discount Car & Truck Rentals", myResponse.results[i].name);
         updated_car_design = updated_car_design.replace("200 Front Street West, Toronto",myResponse.results[i].vicinity);
         updated_car_design = updated_car_design.replace("4.2",myResponse.results[i].rating);
         updated_car_design = updated_car_design.replace("156",myResponse.results[i].user_ratings_total);
+        updated_car_design = updated_car_design.replace("200 Front Street West, Toronto",myResponse.results[i].vicinity);
+        updated_car_design = updated_car_design.replace("https://maps.google.com/maps/contrib/116000449024716612420/photos",myResponse.results[i].photos[0].html_attributions[0].match(/"([^']+)"/)[1]);
         if (myResponse.results[i].hasOwnProperty('photos')){
             updated_car_design = updated_car_design.replace("assets/images/cars.jpg", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference="+myResponse.results[i].photos[0].photo_reference+"&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4")
         }
@@ -261,3 +266,8 @@ $('#btn-one').click(function() {
 
 
 
+// $(document).ready(function(){
+//   $("button").click(function(){
+//     $(".tognav").slideDown(1000);
+//   });
+// });

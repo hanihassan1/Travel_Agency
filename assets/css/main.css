@@ -10,7 +10,9 @@ body {
   background-color: #f0f1f1;
 }
 
-
+a {
+    text-decoration: none !important;
+}
 
 
 /*--------------------------------------------header/nav*/
@@ -29,7 +31,27 @@ html {
   text-decoration: none;
 }
 
+#logoOne {
+  height: 111px;
+  width: 138px;
+  position: absolute;
+  margin: 4px -46px 0px;
 
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .zoom-in {
+    margin-left: 12px!important;
+    padding: 5px;
+    transition: transform .5s;
+    width: 100%;
+    height: 160px;
+    /*margin: 0px;*/
+  }
+  .slogan {
+    display: none;
+  }
+}
 
 @media (min-width: 768px) {
   .navbar {
@@ -46,7 +68,7 @@ html {
     margin-right: 30px;
     flex-direction: row;
     justify-content: flex-end;
-     visibility: visible;
+    visibility: visible;
   }
 
   .main-nav li {
@@ -69,50 +91,72 @@ html {
 
   .logo:hover,
   .nav-links:hover {
-    color: orange;
+    color: #ff9900;
   }
+
 }
+
 .nav-links-tog {
-  color:orange;
+  color: #ff9900;
 }
 
-.navbar-toggler{
-      visibility: hidden;
-  }
+.navbar-toggler {
+  visibility: hidden;
+}
 
 
-@media (max-width: 767px){
-  .navbar-toggler{
-      visibility: visible;
-       opacity: 1;
+@media (max-width: 767px) {
+  .navbar-toggler {
+    visibility: visible;
+    opacity: 1;
   }
-  .main-nav{
+  .main-nav {
     display: none;
   }
-  
-  .bg-dark{    
-  height: 106px!important;
+
+  .bg-dark {
+    height: 106px!important;
   }
   .slogan {
-        display: none;
+    display: none;
   }
-  
- .logo {
+
+  .logo {
     margin-top: 0;
     font-size: 30px;
     color: white;
     padding-bottom: 30px;
   }
-  
-  .collapseStyle{
+
+  .collapseStyle {
     background-color: #343a40!important;
     height: 200px;
-    width:202px;
+    width: 202px;
   }
+  #logoOne {
+    display: none;
+  }
+  #logoOneFot {
+    display: none
+  }
+
 }
 
 
 /*--------------------------------------------footer/ social*/
+
+.fab {
+  font-size: 28px;
+  padding-top: 20px!important;
+}
+
+#logoOneFot {
+  height: 95px;
+  width: 95px;
+  margin: -14px -8px 0;
+
+
+}
 
 .emptyDiv-color {
   background-color: white;
@@ -156,6 +200,7 @@ html {
 
 .footer-bor {
   border-top: 1px solid black;
+
 }
 
 /*--------------------------------------------home body*/
@@ -185,15 +230,15 @@ h2::after {
 .col-center {
   margin: 0 auto;
   float: none !important;
-  
-  
-  
+
+
+
 }
 
 .carousel {
   margin: 10px auto;
   padding: 0 10px;
-  
+
 }
 
 .carousel .item {
@@ -202,16 +247,17 @@ h2::after {
   text-align: center;
   overflow: hidden;
   min-height: 290px;
-  
-  
+
+
 }
 
 
-.carousel-paddin{
-    padding-top: 35px;
-    
-    
+.carousel-paddin {
+  padding-top: 35px;
+
+
 }
+
 /*--------------------------------------------about me/testimonial*/
 
 .about-p {
@@ -223,7 +269,7 @@ h2::after {
   font-family: 'Playfair Display SC', serif;
   text-align: center;
   padding-bottom: 18px;
-  padding-top:48px;
+  padding-top: 48px;
 }
 
 .about-me-div {
@@ -318,7 +364,8 @@ h2::after {
 
 .hotelName-title {
   font-size: 17px;
-  text-align:center;
+  text-align: center;
+  color: #ff9900;
 }
 
 .hotel-title {
@@ -333,8 +380,8 @@ h2::after {
   border-radius: 50%;
   height: 40%;
   width: 30%;
-  border: 2px solid yellow;
-  
+  border: 2px solid #ff9900;
+
 }
 
 .div-colr-ratings {
@@ -370,37 +417,40 @@ h2::after {
 
 
 #hotel_row {
- 
+
   font-size: 13px;
   margin-left: 22%;
   margin-right: 10%;
 }
 
 .ratingStarMarriot {
-  text-align:center;
+  text-align: center;
   padding-top: 6px;
 }
 
-.hotelName-title-secnd{
-  padding-bottom:5px;
+.hotelName-title-secnd {
+  padding-bottom: 5px;
   font-size: 17px;
-  text-align:center;
-
+  text-align: center;
+  color: #ff9900;
+  
 }
 
-.hotel-div{
-margin-top: -135px;
+.hotel-div {
+  margin-top: -135px;
 }
 
 .hotel-locatcar-loc-price {
-  text-align:center;
+  text-align: center;
 }
+
 /*---------------------------------------------------------Cars*/
 
 .CarsName-title {
   font-size: 17px;
-  text-align:center;
-  padding-bottom:5px;
+  text-align: center;
+  padding-bottom: 5px;
+  color: #ff9900;
 }
 
 
@@ -419,20 +469,20 @@ margin-top: -135px;
 }
 
 .car-title {
- 
+
 
   color: white;
   font-family: 'Playfair Display SC', serif;
   text-align: center;
   padding-bottom: 18px;
- 
+
 }
 
 .Cars-img-edit {
   border-radius: 50%;
   height: 40%;
   width: 30%;
-  border: 2px solid yellow;
+  border: 2px solid #ff9900;
 }
 
 .cars-title {
@@ -462,26 +512,27 @@ margin-top: -135px;
 
 #cars_row {
   font-size: 13px;
- margin-left: 22%;
+  margin-left: 22%;
   margin-right: 10%;
 }
 
-.ratingStarCars{
+.ratingStarCars {
 
-text-align:center;
-padding-top: 6px;
+  text-align: center;
+  padding-top: 6px;
 }
 
-.car-loc-price{
-  text-align:center;
+.car-loc-price {
+  text-align: center;
 }
 
 /*---------------------------------------------------------Restaurant*/
 
 .foodName-title {
   font-size: 17px;
-   text-align:center;
-   padding-bottom:5px;
+  text-align: center;
+  padding-bottom: 5px;
+  color: #ff9900;
 }
 
 .food-image {
@@ -507,7 +558,7 @@ padding-top: 6px;
 
 .food-title {
   color: white;
-   font-family: 'Playfair Display SC', serif;
+  font-family: 'Playfair Display SC', serif;
   text-align: center;
   padding-bottom: 18px;
 
@@ -527,25 +578,25 @@ padding-top: 6px;
   border-radius: 50%;
   height: 40%;
   width: 30%;
-  border: 2px solid yellow;
+  border: 2px solid #ff9900;
 }
 
 #food_row {
-  
+
   font-size: 13px;
-   margin-left: 22%;
+  margin-left: 22%;
   margin-right: 10%;
 }
 
 
-.ratingStarFood{
-  text-align:center;
+.ratingStarFood {
+  text-align: center;
   padding-top: 6px;
 
 }
 
 .rest-loc-price {
-  text-align:center;
+  text-align: center;
 }
 
 /*---------------------------------------------------------scroll up*/
@@ -573,7 +624,6 @@ padding-top: 6px;
 
 /*---------------------------------------------------------all cards photo zoom-in*/
 
-
 .zoom-in {
   padding: 5px;
 
@@ -581,21 +631,29 @@ padding-top: 6px;
   width: 160px;
   height: 160px;
   margin: 0 auto;
-  margin-left:90px;
+  /*margin-left: 110px!important;*/
+}
+
+@media only screen and (min-width: 1224px) {
+  .zoom-in {
+    margin-left: 110px!important;
+
+
+  }
 }
 
 .zoom-in:hover {
   transform: scale(1.1);
 }
 
-@media (max-width: 767px){
-  
+@media (max-width: 767px) {
 
-.zoom-in {
+
+  .zoom-in {
     padding: 5px;
     transition: transform .5s;
     width: 100%;
     height: 160px;
-    margin:0px;
-}
+    margin: 0px;
+  }
 }

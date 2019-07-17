@@ -19,7 +19,7 @@ searchHotel.onreadystatechange = function(){
 
         var hotel_design = '<div class="col-md-5 div-colr-ratings"><a target="_blank" href="https://maps.google.com/maps/contrib/116195274436403701222/photos"> <h3 class="hotelName-title">Marriott Downtown at CF Toronto Eaton Centre</h3> <img src="assets/images/hotelroom3.jpg" class="hotel-img-edit zoom-in" alt=""></a><div class="ratingStarMarriot"> Rating: 4.5<p>Based on 1,956 guest reviews</p></div> </span><div class="hotel-locatcar-loc-price"> Open Now</div><div class="hotel-locatcar-loc-price">525 Bay Street, Toronto</div></div>';
         $("#hotel_row").html("");
-        console.log (myResponse.results[0].photos[0].html_attributions[0].match(/"([^']+)"/)[1]);
+        console.log (myResponse.results);
         for (var i = 0; i<4; i++){
         var updated_hotel_design = hotel_design.replace("Marriott Downtown at CF Toronto Eaton Centre", myResponse.results[i].name);
         updated_hotel_design = updated_hotel_design.replace("525 Bay Street, Toronto",myResponse.results[i].vicinity);
@@ -88,7 +88,7 @@ searchCar.onreadystatechange = function(){
         updated_car_design = updated_car_design.replace("156",myResponse.results[i].user_ratings_total);
         updated_car_design = updated_car_design.replace("200 Front Street West, Toronto",myResponse.results[i].vicinity);
         updated_car_design = updated_car_design.replace("https://maps.google.com/maps/contrib/116000449024716612420/photos",myResponse.results[i].photos[0].html_attributions[0].match(/"([^']+)"/)[1]);
-        if (myResponse.results[i].hasOwnProperty('photos')){
+        if (myResponse.results[i].hasOwnProperty('opening_hours')){
             updated_car_design = updated_car_design.replace("assets/images/cars.jpg", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference="+myResponse.results[i].photos[0].photo_reference+"&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4")
         }
         
@@ -140,14 +140,16 @@ searchFood.onreadystatechange = function(){
         }
         else{
         console.log(myResponse);
-        var food_design ='<div class="col-md-5 div-colrfood-ratings"><h3 class="foodName-title">B.GOOD</h3> <img src="assets/images/rest1.jpg" class="food-img-edit zoom-in" alt=""><div class="rest-loc-price"> Rating: 4.1<p>Based on 239 guest reviews</p></div><div class="rest-loc-price"> price_level: 2</div> <div class="rest-loc-price"> Open Now</div><div class="rest-loc-price">100 Front St E, Toronto</div></div>';
+        var food_design ='<div class="col-md-5 div-colrfood-ratings"> <a target="_blank" href="https://maps.google.com/maps/contrib/106244893304681568133/photos"></a><h3 class="foodName-title">B.GOOD</h3><img src="assets/images/rest1.jpg" class="food-img-edit zoom-in" alt=""></a><div class="rest-loc-price"> Rating: 4.1<p>Based on 239 guest reviews</p></div><div class="rest-loc-price"> price_level: 2</div> <div class="rest-loc-price"> Open Now</div><div class="rest-loc-price">100 Front St E, Toronto</div></div>';
         $("#food_row").html("");
+        console.log (myResponse.results);
         for (var i = 0; i<4; i++){
         var updated_food_design = food_design.replace("B.GOOD", myResponse.results[i].name);
         updated_food_design  = updated_food_design.replace("100 Front St E, Toronto",myResponse.results[i].vicinity);
         updated_food_design  = updated_food_design.replace("4.1",myResponse.results[i].rating);
         updated_food_design = updated_food_design.replace("239",myResponse.results[i].user_ratings_total);
         updated_food_design = updated_food_design.replace("2",myResponse.results[i].price_level);
+        updated_food_design = updated_food_design.replace("https://maps.google.com/maps/contrib/106244893304681568133/photos",myResponse.results[i].photos[0].html_attributions[0].match(/"([^']+)"/)[1]);
         updated_food_design = updated_food_design.replace("assets/images/rest1.jpg", "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference="+myResponse.results[i].photos[0].photo_reference+"&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4")
         if(myResponse.results[i].hasOwnProperty('opening_hours')){
         if (myResponse.results[i].opening_hours.open_now == true){
@@ -252,6 +254,7 @@ navBarToggle.addEventListener("click", function() {
         });
       }
       
+      
     function initialize() {
    initMap();
    initAutoComplete();
@@ -266,8 +269,3 @@ $('#btn-one').click(function() {
 
 
 
-// $(document).ready(function(){
-//   $("button").click(function(){
-//     $(".tognav").slideDown(1000);
-//   });
-// });

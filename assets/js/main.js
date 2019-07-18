@@ -52,11 +52,7 @@ searchHotel.onreadystatechange = function() {
 $(".submitButtonHotel").on("click", function() {
 
     findCoordinates($("#hotelSearchId").val());
-    // var cordString = localStorage.getItem("lat") + "," + localStorage.getItem("lng");
-    // link = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + cordString + "&radius=3000&type=lodging&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
-    // console.log(link);
-    // searchHotel.open("GET", link);
-    // searchHotel.send();
+  
 });
 
 
@@ -115,14 +111,7 @@ searchCar.onreadystatechange = function() {
 
 $(".submitButtonCars").on("click", function() {
     findCoordinates($("#carSearchId").val());
-    var cordString = localStorage.getItem("lat") + "," + localStorage.getItem("lng");
-    link = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + cordString + "&radius=3000&type=car_rental&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
-    console.log(link);
-
-
-    searchCar.open("GET", link);
-    searchCar.send();
-});
+  
 
 /*--------------------------------------------------------restaurant search*/
 var searchFood = new XMLHttpRequest();
@@ -177,12 +166,7 @@ searchFood.onreadystatechange = function() {
 
 $(".submitButtonFood").on("click", function() {
     findCoordinates($("#foodSearchId").val());
-    var cordString = localStorage.getItem("lat") + "," + localStorage.getItem("lng");
-    link = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + cordString + "&radius=3000&type=restaurant&keyword=food&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
-    console.log(link);
 
-    searchFood.open("GET", link);
-    searchFood.send();
 });
 
 /*--------------------------------------------------------scroll up*/
@@ -217,6 +201,9 @@ function initAutoComplete() {
     autocomplete = new google.maps.places.Autocomplete(input3, options);
 }
 
+/*--------------------------------------------------------api calling for search buttons*/
+
+/*hotel*/
 
 function findCoordinates(place) {
     link = "https://maps.googleapis.com/maps/api/geocode/json?address=" + place + "&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
@@ -236,6 +223,50 @@ function findCoordinates(place) {
     return true;
 }
 
+/*cars*/
+function findCoordinates(place) {
+    link = "https://maps.googleapis.com/maps/api/geocode/json?address=" + place + "&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
+    serach_coordinates.open("GET", link);
+    serach_coordinates.send();
+
+    serach_coordinates.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myCoordinates = JSON.parse(this.responseText);
+            var cordString = myCoordinates.results[0].geometry.location.lat + "," + myCoordinates.results[0].geometry.location.lng;
+            link = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + cordString + "&radius=3000&type=car_rental&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
+
+
+
+            searchCar.open("GET", link);
+            searchCar.send();
+        }
+    }
+
+    return true;
+}
+
+
+/*restaurant*/
+
+function findCoordinates(place) {
+    link = "https://maps.googleapis.com/maps/api/geocode/json?address=" + place + "&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
+    serach_coordinates.open("GET", link);
+    serach_coordinates.send();
+
+    serach_coordinates.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myCoordinates = JSON.parse(this.responseText);
+            var cordString = myCoordinates.results[0].geometry.location.lat + "," + myCoordinates.results[0].geometry.location.lng;
+            link = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + cordString + "&radius=3000&type=restaurant&keyword=food&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
+
+
+            searchFood.open("GET", link);
+            searchFood.send();
+        }
+    }
+
+    return true;
+}
 /*--------------------------------------------------------googlemap*/
 
 var map;

@@ -51,8 +51,8 @@ searchHotel.onreadystatechange = function() {
 
 $(".submitButtonHotel").on("click", function() {
 
-    findCoordinates($("#hotelSearchId").val());
-  
+    findCoordinatesHotel($("#hotelSearchId").val());
+ 
 });
 
 
@@ -110,11 +110,13 @@ searchCar.onreadystatechange = function() {
 
 
 $(".submitButtonCars").on("click", function() {
-    findCoordinates($("#carSearchId").val());
-  
+    findCoordinatesCar($("#carSearchId").val());
+ 
+});
 
 /*--------------------------------------------------------restaurant search*/
 var searchFood = new XMLHttpRequest();
+var serach_coordinates = new XMLHttpRequest();
 var myResponse;
 var myCoordinates;
 var link;
@@ -165,8 +167,8 @@ searchFood.onreadystatechange = function() {
 
 
 $(".submitButtonFood").on("click", function() {
-    findCoordinates($("#foodSearchId").val());
-
+    findCoordinatesFood($("#foodSearchId").val());
+ 
 });
 
 /*--------------------------------------------------------scroll up*/
@@ -203,9 +205,9 @@ function initAutoComplete() {
 
 /*--------------------------------------------------------api calling for search buttons*/
 
-/*hotel*/
 
-function findCoordinates(place) {
+
+function findCoordinatesHotel(place) {
     link = "https://maps.googleapis.com/maps/api/geocode/json?address=" + place + "&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
     serach_coordinates.open("GET", link);
     serach_coordinates.send();
@@ -223,8 +225,8 @@ function findCoordinates(place) {
     return true;
 }
 
-/*cars*/
-function findCoordinates(place) {
+
+function findCoordinatesCar(place) {
     link = "https://maps.googleapis.com/maps/api/geocode/json?address=" + place + "&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
     serach_coordinates.open("GET", link);
     serach_coordinates.send();
@@ -246,9 +248,9 @@ function findCoordinates(place) {
 }
 
 
-/*restaurant*/
 
-function findCoordinates(place) {
+
+function findCoordinatesFood(place) {
     link = "https://maps.googleapis.com/maps/api/geocode/json?address=" + place + "&key=AIzaSyAZRg3EcBLszWyNFzZtdQv17ji0HNGFdy4";
     serach_coordinates.open("GET", link);
     serach_coordinates.send();
